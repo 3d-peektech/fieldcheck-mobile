@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "FieldCheck",
+    "slug": "fieldcheck",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#2196F3"
+      },
+      "package": "com.fieldcheck.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f51e9122-3511-4179-ad5f-253e5b121c5e"
+      }
+    }
+  }
+}

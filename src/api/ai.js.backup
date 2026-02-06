@@ -1,0 +1,173 @@
+﻿import apiClient from './client';
+
+export const aiAPI = {
+  // Get dashboard statistics
+  getDashboardStats: async () => {
+    try {
+      const response = await apiClient.get('/dashboard/stats');
+      return response;
+    } catch (error) {
+      console.error('Error fetching dashboard stats:', error);
+      throw error;
+    }
+  },
+
+  // Get AI-powered insights
+  getInsights: async () => {
+    try {
+      const response = await apiClient.get('/ai/insights');
+      return response;
+    } catch (error) {
+      console.error('Error fetching AI insights:', error);
+      throw error;
+    }
+  },
+
+  // Get predictive maintenance alerts
+  getPredictiveAlerts: async () => {
+    try {
+      const response = await apiClient.get('/ai/predictive-alerts');
+      return response;
+    } catch (error) {
+      console.error('Error fetching predictive alerts:', error);
+      throw error;
+    }
+  },
+
+  // Get recent activity
+  getRecentActivity: async () => {
+    try {
+      const response = await apiClient.get('/dashboard/recent-activity');
+      return response;
+    } catch (error) {
+      console.error('Error fetching recent activity:', error);
+      throw error;
+    }
+  },
+
+  // Get performance metrics (MTBF, MTTR, etc.)
+  getPerformanceMetrics: async () => {
+    try {
+      const response = await apiClient.get('/ai/performance-metrics');
+      return response;
+    } catch (error) {
+      console.error('Error fetching performance metrics:', error);
+      throw error;
+    }
+  },
+
+  // Get AI recommendations
+  getRecommendations: async () => {
+    try {
+      const response = await apiClient.get('/ai/recommendations');
+      return response;
+    } catch (error) {
+      console.error('Error fetching recommendations:', error);
+      throw error;
+    }
+  },
+
+  // Get trending issues
+  getTrendingIssues: async () => {
+    try {
+      const response = await apiClient.get('/ai/trending-issues');
+      return response;
+    } catch (error) {
+      console.error('Error fetching trending issues:', error);
+      throw error;
+    }
+  },
+
+  // Get detailed insight by ID
+  getInsightDetails: async (insightId) => {
+    try {
+      const response = await apiClient.get(`/ai/insights/${insightId}`);
+      return response;
+    } catch (error) {
+      console.error('Error fetching insight details:', error);
+      throw error;
+    }
+  },
+
+  // Perform AI analysis on asset
+  analyzeAsset: async (assetId, imageData) => {
+    try {
+      const response = await apiClient.post('/ai/analyze-asset', {
+        assetId,
+        imageData,
+      });
+      return response;
+    } catch (error) {
+      console.error('Error analyzing asset:', error);
+      throw error;
+    }
+  },
+
+  // Get anomaly detection results
+  getAnomalies: async (params = {}) => {
+    try {
+      const response = await apiClient.get('/ai/anomalies', { params });
+      return response;
+    } catch (error) {
+      console.error('Error fetching anomalies:', error);
+      throw error;
+    }
+  },
+
+  // Get failure prediction for specific asset
+  predictFailure: async (assetId) => {
+    try {
+      const response = await apiClient.post('/ai/predict-failure', { assetId });
+      return response;
+    } catch (error) {
+      console.error('Error predicting failure:', error);
+      throw error;
+    }
+  },
+
+  // Get optimization suggestions
+  getOptimizations: async () => {
+    try {
+      const response = await apiClient.get('/ai/optimizations');
+      return response;
+    } catch (error) {
+      console.error('Error fetching optimizations:', error);
+      throw error;
+    }
+  },
+
+  // Acknowledge/dismiss an alert
+  acknowledgeAlert: async (alertId) => {
+    try {
+      const response = await apiClient.post(`/ai/alerts/${alertId}/acknowledge`);
+      return response;
+    } catch (error) {
+      console.error('Error acknowledging alert:', error);
+      throw error;
+    }
+  },
+
+  // Get AI model confidence scores
+  getModelConfidence: async () => {
+    try {
+      const response = await apiClient.get('/ai/model-confidence');
+      return response;
+    } catch (error) {
+      console.error('Error fetching model confidence:', error);
+      throw error;
+    }
+  },
+
+  // Train AI model with new data
+  trainModel: async (trainingData) => {
+    try {
+      const response = await apiClient.post('/ai/train', trainingData);
+      return response;
+    } catch (error) {
+      console.error('Error training model:', error);
+      throw error;
+    }
+  },
+};
+
+export default aiAPI;
